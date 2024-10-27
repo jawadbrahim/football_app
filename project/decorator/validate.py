@@ -17,6 +17,6 @@ def validate_schema(json_schema=None):
                  
                  
                  
-         return func(*args,**kwargs,validate_data) 
+         return func(*args,**kwargs,validate_data=validate_data) 
         return wrapper
     return decorator

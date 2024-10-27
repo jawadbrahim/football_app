@@ -7,5 +7,6 @@ class Orm:
         db.session.commit()
     def delete(self,obj):
         db.session.delete(obj)
-    def scalar(self,query):
-     return db.session.query(query).scalar()
+    def add_and_flush(self,obj):
+        db.session.add(obj)
+        db.session.flush()

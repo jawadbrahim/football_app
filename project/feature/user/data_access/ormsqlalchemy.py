@@ -11,7 +11,7 @@ class OrmSqlAlchemy(AbstractionDataAccess,Orm):
             first_name=first_name,
             last_name=last_name
         )
-        self.add(user)
+        self.add_and_flush(user)
         return user
     def get_user(self,user_id):
         get_user=User.query.filter(User.id==user_id,User.is_deleted==False).first()

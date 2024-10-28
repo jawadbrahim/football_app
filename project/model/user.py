@@ -9,5 +9,5 @@ class User(db.Model):
     first_name=db.Column(db.String(50))
     last_name=db.Column(db.String(50))
     is_deleted=db.Column(db.Boolean,default=False)
-    created_at=db.Column(db.DateTime(default=datetime.datetime.now(datetime.timezone.utc)))
+    created_at=db.Column(db.DateTime,default=datetime.datetime.now(datetime.timezone.utc))
     

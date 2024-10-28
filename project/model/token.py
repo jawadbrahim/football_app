@@ -9,4 +9,5 @@ class Token(db.Model):
     id=db.Column(UUID(as_uuid=True),default=uuid.uuid4,primary_key=True)
     token=db.Column(db.String)
     created_At=db.Column(db.DateTime,default=datetime.datetime.now(datetime.timezone.utc))
+    is_deleted=db.Column(db.Boolean,default=False)
     

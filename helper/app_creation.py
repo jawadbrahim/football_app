@@ -6,5 +6,7 @@ def create_app(db):
     db.init_app(app)
     with app.app_context():
         from project.feature.auth.route import auth_bp
+        from project.feature.user.route import user_bp
         app.register_blueprint(auth_bp)
+        app.register_blueprint(user_bp)
         return app

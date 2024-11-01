@@ -9,6 +9,17 @@ def create_user(validate_data):
     controller=UserController()
     response=controller.create_user(validate_data)
     return response,201
+@user_bp.route("/user/profile/<uuid:user_id>",methods=["POST"])
+@request_validator.valdiate_create_profile()
+def create_profile(user_id,validate_data):
+    controller=UserController()
+    response=controller.create_profile(user_id,validate_data)
+    return response,201
+@user_bp.route("/user/get_profile/<uuid:profile_id>",methods=["GET"])
+def get_profile(profile_id):
+    controller=UserController()
+    response=controller.get_profile(profile_id)
+    return response,201
 @user_bp.route("/get_user/<uuid:user_id>",methods=["GET"])
 def get_user(user_id):
     controller=UserController()

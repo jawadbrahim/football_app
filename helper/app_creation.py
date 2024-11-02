@@ -7,6 +7,9 @@ def create_app(db):
     with app.app_context():
         from project.feature.auth.route import auth_bp
         from project.feature.user.route import user_bp
+        from project.feature.match.route import match_bp
         app.register_blueprint(auth_bp)
         app.register_blueprint(user_bp)
+        app.register_blueprint(match_bp)
+        print(app.url_map)
         return app

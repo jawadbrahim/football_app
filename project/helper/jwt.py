@@ -1,12 +1,12 @@
 import jwt
 
 class JwtHelper:
-    def __init__(self,secret,algorithm):
-        self.secret=secret
-        self.algorithm=algorithm
-    def encode(self,payload):
-        encoded_jwt=jwt.encode(payload,self.secret,algorithm=self.algorithm)
-        return encoded_jwt
-    def decode(self,encoded_jwt):
-        payload=jwt.decode(encoded_jwt,self.secret,algorithms=[self.algorithm])
-        return payload
+    def __init__(self, algorithm, secret):
+        self.algorithm = algorithm
+        self.secret = secret
+
+    def encode(self, payload):
+        return jwt.encode(payload, self.secret, algorithm=self.algorithm)
+
+    def decode(self, token):
+        return jwt.decode(token, self.secret, algorithms=[self.algorithm])

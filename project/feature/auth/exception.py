@@ -9,3 +9,9 @@ class EmailAlreadyExist(AppError):
 class CredentialMismatch(AppError):
     description="email or passowrd incorrect"
     http_code=404   
+class GoogleAlreadyExist(AppError):
+    description="google already exist"
+    http_code=404
+class InvalidToken(AppError):
+    description="token not found"
+    http_code=404

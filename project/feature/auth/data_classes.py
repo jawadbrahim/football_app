@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 import uuid
 from datetime import datetime
+from typing import Optional
 @dataclass
 class AuthDataClass:
     id:uuid.UUID
@@ -13,3 +14,8 @@ class Login:
     email:str
     password:str
     token:str
+@dataclass
+class GoogleDataClass:
+    id:uuid.UUID
+    token:str
+    
